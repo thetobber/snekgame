@@ -27,8 +27,8 @@ let snake: SnakePart[] = [
 
 let food = {
   x: 280,
-  y: 280
-}
+  y: 280,
+};
 
 let snakeVelocityX = 10;
 let snakeVelocityY = 0;
@@ -64,10 +64,18 @@ function moveSnake() {
   snake.unshift({ x, y });
   snake.pop();
 
-  if (x === food.x && y === food.y) {
-    const tail = snake[snake.length - 1]
-
-    snake.push({ x: tail.x - 10, y: tail.y -10 })
+  for (let index = 0; index < snake.length; index++) {
+    if (index !== 0 && snake[index].x === x && snake[index].y === y) {
+      gameRunning = false;
+      snakeDirection = Direction.Right;
+      snake = [
+        { x: 200, y: 200 },
+        { x: 190, y: 200 },
+        { x: 180, y: 200 },
+        { x: 170, y: 200 },
+        { x: 160, y: 200 },
+      ];
+    }
   }
 }
 
