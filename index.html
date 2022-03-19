@@ -7,7 +7,18 @@
     <title>Vite App</title>
   </head>
   <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <main>
+      <div>
+        <b>Score: </b>
+        <h3 id="score">0</h3>
+      </div>
+      <canvas id="canvas" width="400" height="400"></canvas>
+      <div id="controls">
+        <button id="toggle" type="button">Resume (Space)</button>
+        <button id="reset" type="button">Reset (Esc)</button>
+      </div>
+      <input type="range" id="rotate" min="0" max="360" value="0">
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
